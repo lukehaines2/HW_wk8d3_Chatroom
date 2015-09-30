@@ -1,7 +1,7 @@
 $(document).ready(function(){
   
-  // GLOBAL VAIRABLE
-  var socket = io();
+  // GLOBAL VAIRABLE THAT RUNS NGROK
+  var socket = io('http://a51ae7d7.ngrok.io');
 
   // CHECK THE CONNECTION WORKS
   socket.on('connect', function() {
