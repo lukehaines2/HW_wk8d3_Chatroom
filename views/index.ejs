@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Socket Chatroom</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.7/socket.io.min.js"></script>
+  <script src="/scripts/chatroom.js"></script>
    <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
@@ -15,10 +18,14 @@
     </style>
 </head>
 <body>
+  <div id="welcome-text">
   <h1>Welcome to the Yewtree chatroom</h1>
+  </div>
   <ul id="messages"></ul>
     <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
+      <input id="name-box" autocomplete="on" />
+      <input id="m" autocomplete="off" />
+      <button>Send</button>
     </form>
 </body>
 </html>

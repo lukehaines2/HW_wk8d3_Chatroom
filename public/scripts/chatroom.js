@@ -1,5 +1,20 @@
-var socket = io('http://08a9c1a3.ngrok.io')
+$(document).ready(function(){
+  
+  // GLOBAL VAIRABLE
+  var socket = io();
 
-socket.on('connect', function() {
+  // CHECK THE CONNECTION WORKS
+  socket.on('connect', function() {
   console.log('connected')
+  })
+
+  $('form').submit(function(){
+    socket.emit('chatroom', $('#name-box').val() + ': ' + $('#m').val());
+    $('#m').val('');
+    return false;
+  });
+  socket.on('chatroom', function(msg){
+    $('#messages').append($('<li>').text(msg));
+  });
+
 })
